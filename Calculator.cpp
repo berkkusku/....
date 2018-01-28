@@ -1,3 +1,5 @@
+//It's my first program.
+
 #include <stdio.h>
 
 main()
