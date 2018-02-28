@@ -1,0 +1,15 @@
+#1. Move south until picobot hits a wall to the south.
+#2. Then move East until Picobot hits a wall to the East.
+#3. When picobot hits a wall to the East, then move west.
+#4. when picobot hits a wall to the West, go North and go on East side.
+#5. When picobot hits a wall to the East, go North and go back step 3.
+
+
+0 ***x -> S 0
+0 ***S -> x 1
+1 *x** -> E 1
+1 *E** -> X 2
+2 **x* -> W 2
+2 **W* -> N 3
+3 *x** -> E 3
+3 *E** -> N 2
