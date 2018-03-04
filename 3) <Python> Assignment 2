@@ -1,0 +1,81 @@
+#It's about name and age.
+
+import stdio
+import sys
+
+
+stdio.write(sys.argv[1])
+stdio.write(" is ")
+stdio.write(int(sys.argv[2]))
+stdio.writeln(" years old.")
+
+
+#Second homework is about greeting.
+import stdio
+import sys
+
+stdio.write("Hi ")
+stdio.write(sys.argv[1])
+stdio.write(", ")
+stdio.write(sys.argv[2])
+stdio.write(", ")
+stdio.write("and ")
+stdio.write(sys.argv[3])
+stdio.writeln(".")
+
+
+#Third homework is like calculating but very basic.
+
+import stdio
+import sys
+
+a = int(sys.argv[1])
+b = int(sys.argv[2])
+
+total = a + b
+diff = a - b
+prod = a * b
+quot = a // b
+rem = a % b
+exp = a ** b
+
+stdio.writeln(str(a) + "+" + str(b) + "=" + str(total))
+stdio.writeln(str(a) + "-" + str(b) + "=" + str(diff))
+stdio.writeln(str(a) + "*" + str(b) + "=" + str(prod))
+stdio.writeln(str(a) + "//" + str(b) + "=" + str(quot))
+stdio.writeln(str(a) + "%" + str(b) + "=" + str(rem))
+stdio.writeln(str(a) + "**" + str(b) + "=" + str(exp))
+
+
+#Last homework is about inequality about triangle.
+
+import stdio
+import sys
+
+x = int(sys.argv[1])
+y = int(sys.argv[2])
+z = int(sys.argv[3])
+
+equality = (x<y+z and y<x+z and z<x+y)
+stdio.writeln(equality)
+
+
+
+
+
+"""
+or, we can make this program with "if" like this;
+import stdio
+import sys
+
+x = int(sys.argv[1])
+y = int(sys.argv[2])
+z = int(sys.argv[3])
+
+if(x<y+z and y<x+z and z<x+y):
+        stdio.writeln("True")
+else:
+        stdio.writeln("False")
+"""
+
+
