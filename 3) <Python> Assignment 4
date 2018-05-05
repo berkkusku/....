@@ -1,0 +1,247 @@
+$ distance.py
+
+import sys
+import stdio
+import stdarray
+import math
+
+x = [1,2,3]
+y = [4,5,6]
+n = len(x) #len(x)=len(y)
+# values of n,x,y are random entered from by me.
+# These values can be any values.
+
+total = 0.0
+
+for i in range(n):
+    total = total + (x[i]-y[i])**2
+    stdio.writeln(total)
+stdio.writeln("Result: " + str(total**0.5))
+#or stdio.writeln("Result: " + str(sqrt(total))) with, write top of in page "from math import sqrt"
+
+$ gcd.py
+
+import sys
+import stdio
+
+x = int(sys.argv[1])
+y = int(sys.argv[2])
+
+
+if x > y:
+    while y != 0:
+        z = x % y
+        x = y
+        y = z
+    stdio.writeln(x)
+elif y > x:
+    while x != 0:
+        z = y % x
+        y = x
+        x = z
+    stdio.writeln(y)
+else:
+        stdio.writeln(x)
+        #or stdio.writeln(y)
+
+"""
+# Or other solution.
+while y != 0:
+    temp = y
+    y = x % y
+    x = temp
+GCD = x
+print(GCD)
+"""
+
+$ index.py
+
+import stdio
+import stdarray
+
+a = stdarray.create1D(1000, 0) #value, that is 0 can be any number. 
+
+stdio.writeln(a[1000])
+
+$ matrixmultiplication.py
+
+import sys
+import stdio
+import stdarray
+import random
+
+m = int(sys.argv[1])
+n = int(sys.argv[2])
+t = int(sys.argv[3])
+k = int(sys.argv[4])
+
+if n != t:
+    stdio.writeln("Second and third values must be equal because of multiplication.")
+    """
+    Because the number of columns in the first matrix must be
+    equal to the number of rows in the second matrix.
+    """
+else:
+    a = stdarray.create2D(m,n,0)
+    b = stdarray.create2D(t,k,0)
+    c = stdarray.create2D(m,k,0)
+    stdio.writeln("Matrix of 'A'")
+    for i in range(m):
+        for j in range(n):
+            a[i][j] = random.randrange(5)
+            stdio.write(str(a[i][j]) + " ")
+        stdio.writeln()
+    stdio.writeln()
+    stdio.writeln("Matrix of 'B'")
+    for i in range(t):
+        for j in range(k):
+            b[i][j] = random.randrange(5)
+            stdio.write(str(b[i][j]) + " ")
+        stdio.writeln()
+    stdio.writeln()
+    stdio.writeln("Matrix of 'AxB'")
+    for i in range(m):
+        for j in range(k):
+            for s in range(n):
+                c[i][j] += a[i][s] * b[s][j]
+            stdio.write(str(c[i][j]) + " ")
+        stdio.writeln()
+
+$ matrixtransposition.py
+import sys
+import stdio
+import stdarray
+import random
+
+a = stdarray.create2D(10,3,0)
+b = stdarray.create2D(3,10,0)
+#Value is 0. But it can be any number it's not important.
+#because it will change with for loop. 
+
+
+for i in range(10):
+    for j in range(3):
+        a[i][j] = random.randrange(20,99)
+        stdio.write(str(a[i][j]) + " ")
+        b[j][i] = a[i][j]
+    stdio.writeln()
+
+stdio.writeln()
+
+for j in range(3):
+    for i in range(10):
+        stdio.write(str(b[j][i]) + " ")
+    stdio.writeln()
+        
+$ numberpyramid.py
+
+import sys
+import stdio
+
+#First solve technique with arrays.
+
+n = int(sys.argv[1])
+
+a = []
+for i in range(n):
+    a = a + [i+1]
+
+for i in range(len(a)):
+    for j in range(i+1):
+        stdio.write(str(a[j]) + " ")
+    stdio.writeln()
+
+
+
+
+
+
+
+
+"""
+#Second solve technique is old technieque that we do it.
+
+x = int(sys.argv[1])
+
+for i in range(1,x+1):
+    for j in range(i):
+        stdio.write(str(j+1) + " ")
+    stdio.writeln()
+"""
+
+$ pokerhand.py
+
+import stdio
+import sys
+import random
+
+
+n = int(sys.argv[1])
+
+
+#Represent suits and ranks:
+    
+SUITS = ["Clubs", "Diamonds", "Hearts", "Spades"]
+RANKS = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen",
+         "King", "Ace"]
+
+
+
+#Write a random card name:
+
+rank = random.randrange(0, len(RANKS))
+suit = random.randrange(0, len(SUITS))
+
+#Create a deck:
+
+deck = []
+for rank in RANKS:
+    for suit in SUITS:
+        card = rank + " of " + suit
+        deck += [card]
+
+#How many people there are. if n = 3, there would be 3 people so, three hands.
+#But we will choose how many hand will be. "with n argument."
+for i in range(n):
+    a = len (deck)
+    #Shuffle the deck:
+    for i in range(a):
+        r = random.randrange(i, a)
+        temp = deck[r]
+        deck[r] = deck[i]
+        deck[i] = temp
+    #Five card for each person:
+    for i in range(5):
+        stdio.writeln(deck[i] + " ")
+        deck.pop(i)
+    stdio.writeln()
+
+
+$ primetable.py
+
+import sys
+import stdio
+import stdarray
+
+n = int(sys.argv[1])
+
+for i in range(n):
+    for j in range(n):
+        x=i
+        y=j
+        while y != 0:
+            z = y
+            y = x % y
+            x = z
+        GCD = x
+        if GCD == 1:
+            stdio.write("* ")
+        else:
+            stdio.write("  ")
+    stdio.writeln()
+
+
+
+
+
+
