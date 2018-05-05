@@ -1,0 +1,14 @@
+def countVowels(n):
+    vowels = "a,e,o,u,i"
+    b = []
+    for i in range(len(n)):
+        for j in range(len(vowels)):
+            if n[i] == vowels[j]:
+                z = n[i]
+                b = b + [z]
+    
+    return len(b)
+
+c = countVowels("pigdogpup")
+print c
+        
