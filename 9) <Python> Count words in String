@@ -1,0 +1,9 @@
+def countString(x):
+    b = 0
+    for i in range(len(x)):
+        if x[i] == " ":
+            b = b + 1
+    return b+1
+
+c = countString("Happy birthday to you")
+print c
