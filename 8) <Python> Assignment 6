@@ -1,0 +1,150 @@
+$ frequency.py
+
+import sys
+import stdio
+
+
+def frequency(A):
+    '''Choose the most frequently digit number'''
+    n=len(A)
+    count=[0]*n                     # Create a new list initialized with '0'
+    for i in range(n):
+        count[A[i]]+= 1              # increase occurrence for value A[i]
+    result = []
+    for x in count:
+        if x:
+            result.append(x)
+    return result
+
+
+def main():
+    user = []
+    for j in range (1, len (sys.argv)): 
+        arg = (sys.argv[j])
+        arg = int(arg)
+        if len(str(arg)) == 1:
+            user = user + [arg]
+            stdio.writeln(arg)         
+        else:
+            stdio.writeln(str(arg) + " will not be counted. (Just digit numbers)")
+    n = frequency(user)
+    stdio.writeln("Most frequently digit number is: "+ str(n.index(max(n)) + 1))    
+    #index function find the max value of list
+
+if __name__ == "__main__":
+    main()
+
+
+$ grade.py
+
+import stdio
+
+def score(x, y, z): #x is grade of assignment, y is grade of midterm, z ise grade of final.
+    '''Calculate the grade of all the result'''
+    if x < 0 or y < 0 or z < 0:
+        return "Wrong!"
+    elif x > 100 or y > 100 or z > 100:
+        return "Wrong!"
+    else:
+        assignment = x*(30.0/100) #assignment is result of calculating that student take a how many point.
+        midterm = y*(30.0/100) # like above.
+        final = z*(40.0/100) # Like above.
+        grade = assignment + midterm + final # Real point of grade that student take.
+        return grade
+        
+def letterGrade(grade):
+    '''Calculate the letter of grade'''
+    if grade >= 85 and grade <= 100:
+        return "AA"
+    elif grade >= 75 and grade < 85:
+        return "BA"
+    elif grade >= 70 and grade < 75:
+        return "BB"
+    elif grade >= 65 and grade < 70:
+        return "CB"
+    elif grade >= 60 and grade < 65:
+        return "CC"
+    elif grade >= 55 and grade < 60:
+        return "DC"
+    elif grade >= 40 and grade < 55:
+        return "DD"
+    elif grade >= 0 and grade < 40:  #15 18 32
+        return "FF"
+    else:
+        return "Don't enter negative number and bigger number than 100"
+def main():
+    m = score(50,60,80)
+    stdio.writeln(m)
+    stdio.writeln(letterGrade(m))
+
+if __name__ == "__main__":
+    main()
+
+
+$ normalization.py
+
+import sys
+import stdio
+
+def normalize(x):
+    '''That function rescales each element is between 0 and 1'''
+    max_value = max(x)
+    min_value = min(x)
+    for i in range(0, len(x)):
+        x[i] = (x[i] - min_value) / (max_value - min_value)
+    return x
+
+
+def main():
+    a = []
+    for j in range(1, len(sys.argv)):
+        arg = int(sys.argv[j])
+        arg = float(arg)
+        a = a + [arg]
+    n = normalize(a)
+    stdio.writeln(n)
+
+if __name__ == "__main__":
+    main()
+
+
+$ palindrome.py
+  
+import stdio
+import sys
+
+def is_palindrome(s):
+    '''That function controls the reverse. If they same turn the True or False'''
+    return s == s[::-1]
+
+def main():
+    n = sys.argv[1]
+    a = is_palindrome(n)
+    stdio.writeln(a)
+
+
+if __name__ == "__main__":
+    main()
+
+
+$ reverse.py
+
+mport stdio
+
+def reverse():
+    '''Reverse the text word by word'''
+    list = ["to", "be", "or", "not"]
+    for i in range(len(list) // 2):
+        change = list[i]
+        list[i] = list[len(list) -1 -i]
+        list[len(list) -1 -i] = change
+    return list
+
+def main():
+    a = reverse()
+    stdio.writeln(a)
+
+
+if __name__ == "__main__":
+    main()
+
