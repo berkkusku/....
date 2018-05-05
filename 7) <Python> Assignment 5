@@ -1,0 +1,57 @@
+$ majority.py
+
+import stdio
+
+def majority(x,y,z):
+    '''If there are True boolean more than 1. Function write True'''
+    return int((x + y + z)) > 1 #In boolean, value of True is "1" and False is 0...
+                                #so if sum is bigger than 1, there are True values that much than "1".
+a = majority(False, False, True)
+
+
+stdio.writeln(a)
+
+
+$ max.py
+
+import stdio
+
+def max3(x,y,z):
+    '''That function find the bigger one'''
+    list = [x,y,z]
+    maxnumber = list[0]
+    for i in range(1,len(list)):
+        if list[i] > maxnumber:
+            maxnumber = list[i]
+    return maxnumber
+
+a = max3(-100,10,95.4)
+stdio.writeln(a)
+
+$ odd.py
+
+import stdio
+
+def odd(x,y,z):
+    '''If sum of True booleans are odd, write the function is True''' 
+    return (x + y + z) % 2 == 1
+
+a = odd(True, True, True)
+
+stdio.writeln(a)   
+
+$triangular.py
+
+import sys
+import stdio
+
+def areTriangular(x,y,z):
+    '''It looks the values because of triangular rull'''
+    if x<y+z and y<x+z and z<x+y:
+        return True
+    else:
+        return False
+
+m = areTriangular(3,4,5)
+
+stdio.writeln(m)
